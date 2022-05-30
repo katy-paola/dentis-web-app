@@ -1,0 +1,32 @@
+name: Deploy Dentis Web
+on:
+  push:
+    branches:
+      - main
+jobs:
+  vercel:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup Node 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Build
+        run: npm ci
+
+      - name: lint
+        run: npm run lint
+
+      - name: format
+        run: npm run prettier-format
+
+      - uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}

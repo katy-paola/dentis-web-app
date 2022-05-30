@@ -1,0 +1,36 @@
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.nav-item .item {
+  padding: 5px;
+}
+
+.active {
+  background-color: rgba(174, 157, 247, 0.3);
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn--login {
+  background-color: rgb(111, 84, 233) !important;
+  color: white !important;
+}
+
+.btn--login:hover {
+  background-color: rgba(111, 84, 233, 0.8) !important;
+}
+
+.btn--login:focus {
+  outline: none;
+}
+
+.btn--login:active {
+  outline: none;
+}

@@ -1,0 +1,14 @@
+.img--reprogramar-cita {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.img--agenda {
+  border-radius: 20px;
+  height: auto;
+  padding: 10px 50px;
+  overflow: hidden;
+  margin: 20px 50px;
+}

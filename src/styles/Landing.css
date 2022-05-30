@@ -1,0 +1,67 @@
+.banner {
+  position: relative;
+  overflow: hidden;
+  padding: 16px;
+  border: 3px dotted rgb(98, 98, 231);
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner h1 {
+  position: relative;
+  color: transparent;
+  font-size: 5rem;
+  display: block;
+  line-height: 1.1;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.banner h1::before {
+  content: 'Dentis Web 🦷';
+  position: absolute;
+  background: linear-gradient(90deg, rgb(178, 207, 32), rgb(111, 84, 233));
+  inset: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animated 2s infinite;
+}
+
+@keyframes animated {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(10px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(-10px);
+  }
+}
+
+.banner h2 {
+  position: relative;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  z-index: 2;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.banner img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.6;
+}

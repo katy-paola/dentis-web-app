@@ -1,0 +1,29 @@
+.card--size {
+  width: 260px;
+  height: 100%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card--header--agendada {
+  background-color: rgb(132, 182, 244) !important;
+  color: white;
+  font-weight: bold;
+}
+
+.card--header--reprogramada {
+  background-color: rgb(253, 253, 150) !important;
+  color: black;
+  font-weight: bold;
+}
+
+.card--header--cancelada {
+  background-color: rgb(255, 105, 97) !important;
+  color: white;
+  font-weight: bold;
+}
+
+.card--header--completada {
+  background-color: rgb(119, 221, 119) !important;
+  color: black;
+  font-weight: bold;
+}
