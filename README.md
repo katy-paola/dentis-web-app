@@ -1,4 +1,4 @@
-[![Deploy Dentis Web](https://github.com/katy-paola/dentis-web/actions/workflows/deploy.yml/badge.svg)](https://github.com/katy-paola/dentis-web/actions/workflows/deploy.yml)
+[![Deploy Dentis Web](https://github.com/katy-paola/dentis-web-app/actions/workflows/deploy.yml/badge.svg)](https://github.com/katy-paola/dentis-web-app/actions/workflows/deploy.yml)
 
 # Dentis Web
 
