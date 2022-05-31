@@ -48,6 +48,9 @@ const CardCita = ({ motivo, fecha, estado, id, solicitud }) => {
 
   const isPaciente = user.rol === 'PACIENTE';
 
+  console.log('>>> isPaciente ' + isPaciente);
+  console.log('>>> Rol usuario ' + user.rol);
+
   return (
     <div className="card text-center card--size">
       <div

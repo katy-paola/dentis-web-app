@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { getCitasUsuario } from '../services/citas.services';
 
 const CardPaciente = ({ nombre, email, cedula }) => {
-  const [Image, setImage] = useState(null);
   const [numberCitas, setNumberCitas] = useState(0);
 
   useEffect(() => {
@@ -12,13 +11,6 @@ const CardPaciente = ({ nombre, email, cedula }) => {
       setNumberCitas(response.data.citas.length);
     };
     getCitas();
-
-    const getImage = async () => {
-      const response = await fetch(`https://randomuser.me/api/`);
-      const data = await response.json();
-      setImage(data.results[0].picture.large);
-    };
-    getImage();
   }, [cedula]);
 
   return (
@@ -32,7 +24,7 @@ const CardPaciente = ({ nombre, email, cedula }) => {
             <div className="d-flex text-black">
               <div className="flex-shrink-0">
                 <img
-                  src={Image}
+                  src={'../images/foto-perfil.png'}
                   alt="Generic placeholder image"
                   className="img-fluid"
                   style={{ width: 180, borderRadius: 10 }}

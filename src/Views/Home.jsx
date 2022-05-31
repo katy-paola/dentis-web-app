@@ -66,7 +66,7 @@ const Home = () => {
         <div className="mt-5">
           <h2 className="misCitas">Lista de pacientes</h2>
           <div className="input-group mb-3">
-            <span className="input-group-text icon-search" id="Busqueda"></span>
+            <span className="input-group-text icon-search" id="Busqueda" />
             <input
               type="text"
               className="form-control"
