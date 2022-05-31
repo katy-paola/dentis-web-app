@@ -1,8 +1,7 @@
 import '../styles/modificarPerfil.css';
 
 const ModificarPerfil = () => {
-
-  return (
-      
-  );
+  return <></>;
 };
+
+export default ModificarPerfil;
