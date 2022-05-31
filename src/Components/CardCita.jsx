@@ -46,11 +46,6 @@ const CardCita = ({ motivo, fecha, estado, id, solicitud }) => {
   const isCanceladoOrCompletado =
     estado === 'CANCELADA' || estado === 'COMPLETADA';
 
-  const isPaciente = user.rol === 'PACIENTE';
-
-  console.log('>>> isPaciente ' + isPaciente);
-  console.log('>>> Rol usuario ' + user.rol);
-
   return (
     <div className="card text-center card--size">
       <div
@@ -63,7 +58,7 @@ const CardCita = ({ motivo, fecha, estado, id, solicitud }) => {
       <div className="card-body d-flex flex-column justify-content-between gap-3">
         <h5 className="card-title">{motivo}</h5>
         <p style={{ fontSize: '0.8rem' }}>
-          {isPaciente
+          {user.rol === 'PACIENTE'
             ? existeSolicitud && 'Has enviado una solicitud de ' + isSolicitud
             : existeSolicitud &&
               'El paciente ha hecho una solicitud de ' + isSolicitud}
@@ -78,11 +73,13 @@ const CardCita = ({ motivo, fecha, estado, id, solicitud }) => {
                 data-bs-custom-class="custom-tooltip"
                 title="Cancelar cita"
                 id="cancelacion"
-                onClick={isPaciente ? mensajeSolicitud : cancelarCita}
+                onClick={
+                  user.rol === 'PACIENTE' ? mensajeSolicitud : cancelarCita
+                }
               >
                 <span className="icon-bin"></span>
               </button>
-              {isPaciente ? (
+              {user.rol === 'PACIENTE' ? (
                 <button
                   className="btn btn-outline-warning btn-sm"
                   data-bs-toggle="tooltip"
