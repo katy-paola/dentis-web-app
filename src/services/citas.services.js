@@ -23,9 +23,10 @@ export const createCita = async ({
   });
 };
 
-export const actualizarCita = async ({ id, fechaHora, estado }) => {
+export const actualizarCita = async ({ id, fechaHora, estado, solicitud }) => {
   return axios.put(`${API_URL}/citas/${id}`, {
     fechaHora,
-    estado
+    estado,
+    solicitud
   });
 };

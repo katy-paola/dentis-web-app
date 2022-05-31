@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import CardCita from '../Components/CardCita';
 import { useAuthState } from '../context/authContext';
 import useCitas from '../hooks/useCitas';
@@ -9,6 +10,7 @@ import ordenarPorFecha from '../utils/ordenarPorFecha';
 const Home = () => {
   const { user } = useAuthState();
   const { data, loading, isError } = useCitas({ cedula: user.cedula });
+  const [busqueda, setBusqueda] = useState('');
   const {
     data: usuarios,
     loading: loadingUsuarios,
@@ -42,6 +44,7 @@ const Home = () => {
                           motivo={cita.motivo}
                           fecha={new Date(cita.fechaHora).toLocaleString()}
                           estado={cita.estado}
+                          solicitud={cita.solicitud}
                         />
                       </div>
                     ))}
@@ -62,12 +65,31 @@ const Home = () => {
       {user.rol === 'SECRETARIO' && (
         <div className="mt-5">
           <h2 className="misCitas">Lista de pacientes</h2>
+          <div className="input-group mb-3">
+            <span className="input-group-text icon-search" id="Busqueda"></span>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Por nombre o por cédula"
+              aria-label="Busqueda"
+              aria-describedby="Busqueda"
+              value={busqueda}
+              onChange={(e) => setBusqueda(e.target.value)}
+            />
+          </div>
           <div className="mt-3 d-flex flex-wrap gap-5">
             {loadingUsuarios ? (
               <div>Cargando...</div>
             ) : (
               usuarios
                 .filter((usuario) => usuario.rol === 'PACIENTE')
+                .filter(
+                  (usuario) =>
+                    usuario.nombre
+                      .toLowerCase()
+                      .includes(busqueda.toLowerCase()) ||
+                    usuario.cedula.includes(busqueda)
+                )
                 .map((usuario) => (
                   <CardPaciente
                     key={usuario.id}

@@ -5,11 +5,13 @@ import Loading from '../Components/Loading';
 import '../styles/viewPaciente.css';
 import CardCita from '../Components/CardCita';
 import ordenarPorFecha from '../utils/ordenarPorFecha';
+import compararFechas from '../utils/compararFechas';
 
 const ViewPaciente = () => {
   let { cedula } = useParams();
   const [paciente, setPaciente] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [busqueda, setBusqueda] = useState('');
 
   useEffect(() => {
     const getData = async () => {
@@ -55,19 +57,48 @@ const ViewPaciente = () => {
               </div>
             </div>
             <div className="col">
+              <div className="input-group mb-5">
+                <span
+                  className="input-group-text icon-search"
+                  id="Busqueda"
+                ></span>
+                <input
+                  type="date"
+                  className="form-control"
+                  placeholder="Por nombre o por cédula"
+                  aria-label="Busqueda"
+                  aria-describedby="Busqueda"
+                  value={busqueda}
+                  onChange={(e) => setBusqueda(e.target.value)}
+                />
+                <button
+                  className="btn btn-danger"
+                  type="button"
+                  onClick={() => setBusqueda('')}
+                >
+                  Borrar búsqueda
+                </button>
+              </div>
               {paciente?.citas.length > 0 ? (
                 <>
                   <div className="d-flex justify-content-center gap-5 flex-wrap align-items-stretch">
-                    {paciente?.citas.sort(ordenarPorFecha).map((cita) => (
-                      <div key={cita.id}>
-                        <CardCita
-                          motivo={cita.motivo}
-                          id={cita.id}
-                          fecha={new Date(cita.fechaHora).toLocaleString()}
-                          estado={cita.estado}
-                        />
-                      </div>
-                    ))}
+                    {paciente?.citas
+                      .filter((cita) => {
+                        if (busqueda === '') return true;
+                        return compararFechas(cita.fechaHora, busqueda);
+                      })
+                      .sort(ordenarPorFecha)
+                      .map((cita) => (
+                        <div key={cita.id}>
+                          <CardCita
+                            motivo={cita.motivo}
+                            id={cita.id}
+                            fecha={new Date(cita.fechaHora).toLocaleString()}
+                            estado={cita.estado}
+                            solicitud={cita.solicitud}
+                          />
+                        </div>
+                      ))}
                   </div>
                 </>
               ) : (

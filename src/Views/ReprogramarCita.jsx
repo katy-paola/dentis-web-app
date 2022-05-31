@@ -42,7 +42,8 @@ const ReprogramarCita = () => {
       await actualizarCita({
         id,
         fechaHora: fechaHoraFormato,
-        estado: 'REPROGRAMADA'
+        estado: 'REPROGRAMADA',
+        solicitud: 'solicitud'
       });
       alert('Cita reprogramada');
       navigate('/home');
