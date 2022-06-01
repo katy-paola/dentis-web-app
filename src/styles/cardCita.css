@@ -6,7 +6,7 @@
 
 .card--header--agendada {
   background-color: rgb(132, 182, 244) !important;
-  color: white;
+  color: black;
   font-weight: bold;
 }
 
@@ -18,7 +18,7 @@
 
 .card--header--cancelada {
   background-color: rgb(255, 105, 97) !important;
-  color: white;
+  color: black;
   font-weight: bold;
 }
 
@@ -26,4 +26,10 @@
   background-color: rgb(119, 221, 119) !important;
   color: black;
   font-weight: bold;
+}
+.button--color {
+  background-color: transparent;
+}
+.icon-check-circle:hover {
+  color: green;
 }

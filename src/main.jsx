@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { AuthContextProvider } from './context/authContext';
 import App from './App';
 import Home from './Views/Home';
@@ -14,11 +14,12 @@ import AgendarCita from './Views/AgendarCita';
 import AgregarSecretario from './Views/AgregarSecretario';
 import ReprogramarCita from './Views/ReprogramarCita';
 import ViewPaciente from './Views/ViewPaciente';
+import ModificarPerfil from './Views/ModificarPerfil';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <AuthContextProvider>
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="/" element={<Landing />} />
@@ -63,6 +64,14 @@ root.render(
               </RequireAuth>
             }
           />
+          <Route
+            path="mi-perfil"
+            element={
+              <RequireAuth>
+                <ModificarPerfil />
+              </RequireAuth>
+            }
+          />
           <Route path="login" element={<Login />} />
           <Route path="registro" element={<Register />} />
           <Route
@@ -81,6 +90,6 @@ root.render(
           />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </AuthContextProvider>
 );

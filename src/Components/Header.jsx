@@ -32,6 +32,12 @@ const Header = () => {
                     <span className="item">Inicio</span>
                   </NavLink>
                 </li>
+                <li className="nav-item">
+                  <NavLink to={'/mi-perfil'} className="nav-link">
+                    <span className="icon-user"></span>
+                    <span className="item">Mi Perfil</span>
+                  </NavLink>
+                </li>
                 {user.rol === 'PACIENTE' && (
                   <li className="nav-item">
                     <NavLink to={'/agendar-cita'} className="nav-link">
@@ -66,7 +72,6 @@ const Header = () => {
             )}
             <div>
               {/* Aqui puede ir el nombre de la persona que inicia sesi[on] */}
-              <span className="icon-user"></span>
               <span className="item">
                 {auth ? (
                   <div className="d-flex align-items-center gap-3">
