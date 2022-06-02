@@ -15,13 +15,10 @@ const CardPaciente = ({ nombre, email, cedula }) => {
 
   return (
     <div className="h-100">
-      <div
-        className="row d-flex justify-content-center align-items-center h-100"
-        style={{ width: 500 }}
-      >
+      <div className="row d-flex justify-content-center align-items-center h-100">
         <div className="card" style={{ borderRadius: 15 }}>
           <div className="card-body p-4">
-            <div className="d-flex text-black">
+            <div className="d-flex text-black flex-wrap">
               <div className="flex-shrink-0">
                 <img
                   src={'../images/foto-perfil.png'}

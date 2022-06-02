@@ -2,7 +2,8 @@
   position: relative;
   overflow: hidden;
   padding: 16px;
-  border: 3px dotted rgb(98, 98, 231);
+  border: 3px dotted rgb(158, 98, 231);
+  background-color: rgba(28, 28, 154, 0.383);
   height: 90vh;
   width: 100%;
   display: flex;
@@ -22,9 +23,9 @@
 }
 
 .banner h1::before {
-  content: 'Dentis Web 🦷';
+  content: 'Dentis Web';
   position: absolute;
-  background: linear-gradient(90deg, rgb(178, 207, 32), rgb(111, 84, 233));
+  background: linear-gradient(90deg, rgb(12, 130, 215), rgb(111, 84, 233));
   inset: 0;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -52,16 +53,8 @@
   position: relative;
   font-size: 2rem;
   font-weight: bold;
-  color: white;
+  color: rgb(255, 255, 255);
   z-index: 2;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.banner img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: auto;
-  opacity: 0.6;
+  margin-top: 1%;
 }

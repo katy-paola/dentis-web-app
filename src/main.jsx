@@ -15,6 +15,7 @@ import AgregarSecretario from './Views/AgregarSecretario';
 import ReprogramarCita from './Views/ReprogramarCita';
 import ViewPaciente from './Views/ViewPaciente';
 import ModificarPerfil from './Views/ModificarPerfil';
+import VerPerfil from './Views/VerPerfil';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -65,10 +66,18 @@ root.render(
             }
           />
           <Route
-            path="mi-perfil"
+            path="modificar-perfil"
             element={
               <RequireAuth>
                 <ModificarPerfil />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="mi-perfil"
+            element={
+              <RequireAuth>
+                <VerPerfil />
               </RequireAuth>
             }
           />
