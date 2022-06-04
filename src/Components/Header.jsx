@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar--main">
         <div className="container-fluid">
           <Link className="navbar-brand" to={'/'}>
             Dentis-Web
