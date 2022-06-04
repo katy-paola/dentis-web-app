@@ -54,24 +54,12 @@ const Header = () => {
                     </NavLink>
                   </li>
                 )}
-                <li className="nav-item ">
-                  <NavLink to={'/nosotros'} className="nav-link">
-                    <span className="icon-users"></span>
-                    <span className="item">Nosotros</span>
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink to={'/contacto'} className="nav-link">
-                    <span className="icon-phone"></span>
-                    <span className="item">Contacto</span>
-                  </NavLink>
-                </li>
               </ul>
             ) : (
               <div className="me-auto"></div>
             )}
             <div>
-              {/* Aqui puede ir el nombre de la persona que inicia sesi[on] */}
+              {/* Aquí puede ir el nombre de la persona que inicia sesión */}
               <span className="item">
                 {auth ? (
                   <div className="d-flex align-items-center gap-3">
