@@ -102,7 +102,7 @@ const ViewPaciente = () => {
                   </div>
                 </>
               ) : (
-                <h2>No tienes citas</h2>
+                <h2>No tiene citas registradas</h2>
               )}
             </div>
           </div>
