@@ -6,6 +6,9 @@ const Register = () => {
   const { login, auth } = useAuthState();
   const navigate = useNavigate();
 
+  /**
+   * Funcion para registar un usuario
+   */
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -23,6 +26,7 @@ const Register = () => {
     }
   };
 
+  /* Comprobación de si el usuario está autentificado, si es así, redirige a la página de inicio.  */
   if (auth) {
     return <Navigate to={'/home'} />;
   }

@@ -12,6 +12,9 @@ const AgendarCita = () => {
   const [horas, setHoras] = useState(mapHoras);
   const [isFechaSeleccionada, setIsFechaSeleccionada] = useState(false);
 
+  /**
+   * Obtiene todas las citas para un día determinado y luego filtra las horas que ya están ocupadas
+   */
   const comprobarDisponibilidad = async () => {
     setIsFechaSeleccionada(true);
     const fecha = fechaSeleccionada.current.value;
@@ -30,6 +33,10 @@ const AgendarCita = () => {
     setHoras(horasDisponibles);
   };
 
+  /**
+   * Toma los valores de las entradas, formatea la fecha y la hora, y luego envía una solicitud al
+   * backend para crear una nueva cita
+   */
   const agendarCita = async () => {
     const fecha = fechaSeleccionada.current.value;
     const hora = horaSeleccionada.current.value;

@@ -11,6 +11,9 @@ const ModificarPerfil = () => {
     setCurrentUser({ ...currentUser, [e.target.name]: e.target.value });
   };
 
+  /**
+   * Guarda los cambios realizados en el perfil del usuario.
+   */
   const saveChanges = async () => {
     try {
       await actualizarUsuario({

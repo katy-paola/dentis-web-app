@@ -18,6 +18,8 @@ import ModificarPerfil from './Views/ModificarPerfil';
 import VerPerfil from './Views/VerPerfil';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// Definimos todas las rutas de la aplicación
 root.render(
   <AuthContextProvider>
     <HashRouter>

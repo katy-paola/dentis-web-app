@@ -11,6 +11,10 @@ const CardCita = ({ motivo, fecha, estado, id, solicitud }) => {
 
   const { user } = useAuthState();
 
+  /**
+   * Es una función que actualiza el estado de una cita a COMPLETADA y luego
+   * avisa al usuario de que la cita se ha completado
+   */
   const completarCita = async () => {
     try {
       await actualizarCita({
@@ -26,6 +30,9 @@ const CardCita = ({ motivo, fecha, estado, id, solicitud }) => {
     }
   };
 
+  /**
+   * Cancela una cita programada.
+   */
   const cancelarCita = async () => {
     try {
       await actualizarCita({ id, estado: 'CANCELADA', solicitud: 'solicitud' });
@@ -37,6 +44,12 @@ const CardCita = ({ motivo, fecha, estado, id, solicitud }) => {
     }
   };
 
+  /**
+   * Es una función que toma un parámetro llamado solicitud, y luego establece una variable llamada
+   * mensaje a 'cancelación' o 'reprogramación' dependiendo del valor de solicitud.target.id.
+   * Luego llama a la función actualizarCita, que se importa del archivo api.js, y le pasa
+   * el id de la cita y el valor de mensaje
+   */
   const mensajeSolicitud = async (solicitud) => {
     let mensaje;
     try {

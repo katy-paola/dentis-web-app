@@ -13,6 +13,9 @@ const ReprogramarCita = () => {
   const navigate = useNavigate();
   const [isFechaSeleccionada, setIsFechaSeleccionada] = useState(false);
 
+  /**
+   * Obtiene todas las citas para un día determinado y luego filtra las horas que ya están ocupadas
+   */
   const comprobarDisponibilidad = async () => {
     setIsFechaSeleccionada(true);
     const fecha = fechaSeleccionada.current.value;
@@ -31,6 +34,11 @@ const ReprogramarCita = () => {
     setHoras(horasDisponibles);
   };
 
+  /**
+   * La función reprogramarCita() es una función asíncrona que toma la fecha y hora seleccionada por el
+   * usuario y la convierte en una cadena, luego llama a la función actualizarCita() para actualizar la
+   * cita en la base de datos
+   */
   const reprogramarCita = async () => {
     const fecha = fechaSeleccionada.current.value;
     const hora = horaSeleccionada.current.value;

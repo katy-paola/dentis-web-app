@@ -19,6 +19,12 @@ const Login = () => {
     }
   };
 
+  /**
+   * Es una función que maneja el envío de un formulario, y lo hace impidiendo la acción por defecto
+   * del formulario, luego intenta iniciar la sesión del usuario llamando a la función loginService, y si
+   * tiene éxito, inicia la sesión del usuario y navega a la página de inicio, de lo contrario alerta al usuario de que
+   * el correo electrónico o la contraseña son incorrectos
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -30,6 +36,7 @@ const Login = () => {
     }
   };
 
+  /* Comprobación de si el usuario está autentificado, si es así, redirige a la página de inicio.  */
   if (auth) {
     return <Navigate to={'/home'} />;
   }

@@ -1,3 +1,9 @@
+/**
+ * Toma dos fechas, y devuelve true si son el mismo día, false en caso contrario
+ * @param fecha1 - La fecha que desea comparar
+ * @param fecha2 - La fecha que desea comparar
+ * @returns Valor booleano
+ */
 const compararFechas = (fecha1, fecha2) => {
   var f1 = new Date(fecha1);
   var day = new Date(fecha2).getUTCDate();

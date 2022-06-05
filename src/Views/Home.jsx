@@ -26,7 +26,7 @@ const Home = () => {
       <h1 className="mensaje">
         Bienvenido, <b>{user.nombre}</b> 😻
       </h1>
-
+      {/* Validamos dependiendo al rol, qué se le muetra */}
       {user.rol === 'PACIENTE' && (
         <div className="cita--hoy">
           {loading ? (
