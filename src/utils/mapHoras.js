@@ -1,3 +1,4 @@
+/* Creamos un array de horas */
 const mapHoras = [
   { indice: 8, value: '08:00 AM' },
   { indice: 9, value: '09:00 AM' },
