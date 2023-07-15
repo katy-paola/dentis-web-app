@@ -1,4 +1,4 @@
-.banner {
+/* .banner {
   position: relative;
   overflow: hidden;
   padding: 16px;
@@ -57,4 +57,11 @@
   z-index: 2;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   margin-top: 1%;
+} */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-container);
 }

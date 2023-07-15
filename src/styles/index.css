@@ -1,6 +1,31 @@
-body {
+:root {
+  --font-size: 62.5%;
+  --poppins: 'Poppins', sans-serif;
+  font-size: var(--font-size);
+
+  --color-title: #293649;
+  --color-text: #283242;
+
+  --bg-container: #d2eaff;
+  --bg-header: #f8faff;
+
+  --btn-primary: #407bff;
+  --btn-primary-hover: #155af4;
+  --btn-secondary: #a0a0a0;
+  --btn-secondary-hover: var(--btn-primary);
+
+  --white: #fff;
+
+  --shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.25);
+}
+* {
   margin: 0;
-  font-family: 'Nunito', sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--poppins);
+  font-size: 1.6rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

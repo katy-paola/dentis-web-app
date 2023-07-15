@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import Header from './Components/Header';
+//import Header from './Components/Header';
 
 /**
  * La función App devuelve un componente Header y un elemento principal que contiene un componente Outlet
@@ -8,7 +8,7 @@ import Header from './Components/Header';
 const App = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <main>
         <Outlet />
       </main>
