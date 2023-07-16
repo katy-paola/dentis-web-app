@@ -139,3 +139,11 @@
     font-size: 2.4rem;
   }
 }
+@media screen and (min-width: 1024px) {
+  .main__description {
+    max-width: 75%;
+  }
+  .main__buttons {
+    width: 70%;
+  }
+}
