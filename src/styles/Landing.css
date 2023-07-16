@@ -67,6 +67,9 @@
   flex: 1;
   padding: 4rem 1.6rem;
 }
+.main__contents {
+  display: contents;
+}
 .main__description {
   font-size: 2rem;
   font-weight: 500;
@@ -89,6 +92,7 @@
   align-items: center;
   gap: 1.6rem;
   width: 100%;
+  order: 1;
 }
 .main__button {
   font-size: 2rem;
@@ -135,9 +139,6 @@
     flex-direction: row;
     gap: 2.4rem;
   }
-  .main__button {
-    font-size: 2.4rem;
-  }
 }
 @media screen and (min-width: 1024px) {
   .main__description {
@@ -145,5 +146,27 @@
   }
   .main__buttons {
     width: 70%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .main {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    padding: 0 4rem;
+  }
+  .main__contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+  }
+  .main__description {
+    width: 100%;
+  }
+  .main__illustration {
+    width: 52rem;
   }
 }
