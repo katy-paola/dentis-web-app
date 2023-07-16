@@ -5,8 +5,6 @@ import App from './App';
 import Home from './Views/Home';
 import Login from './Views/Login';
 import Register from './Views/Register';
-//import 'bootstrap/dist/css/bootstrap.css';
-import './styles/index.css';
 import './styles/icomoon.css';
 import RequireAuth from './routes/requireAuth';
 import Landing from './Views/Landing';

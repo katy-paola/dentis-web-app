@@ -1,24 +1,29 @@
+import Button from '../Components/Button';
 import '../styles/Landing.css';
-import Header from '../Components/Header';
-import MainLanding from '../Components/MainLanding';
 
-/**
- * Devuelve un div con una clase de banner, y dentro de ese div, devuelve un h1 y un h2
- * @returns Un div con una clase de banner y texto-centro.
- */
 const Landing = () => {
   return (
-    // <div className="banner text-center">
-    //   <h1>Dentis Web</h1>
-    //   <h2>
-    //     Dentis Web es una aplicación web que te permite agendar citas con tus
-    //     ortodoncistas.
-    //   </h2>
-    // </div>
-    <div className="container">
-      <Header />
-      <MainLanding />
-    </div>
+    <main className="main">
+      <p className="main__description">
+        Una sonrisa perfecta comienza aquí. Descubre la excelencia en ortodoncia
+        y reserva tu cita ahora mismo.
+      </p>
+      <figure className="main__figure">
+        <img
+          src="/images/illustration-landing-200.svg"
+          alt=""
+          className="main__illustration"
+        />
+      </figure>
+      <div className="main__buttons">
+        <Button route={'/login'} text={'Iniciar sesión'} bgColor={'primary'} />
+        <Button
+          route={'/register'}
+          text={'Registrarme'}
+          bgColor={'secondary'}
+        />
+      </div>
+    </main>
   );
 };
 
